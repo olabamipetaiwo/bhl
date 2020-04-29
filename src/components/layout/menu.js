@@ -43,12 +43,13 @@ const lightTheme = {
   
 
 const MenuRight = ({ style }) => {
-
-    const [currentMode, setCurrentMode] = useState('dark');
+    const cur = localStorage.mode ? localStorage.getItem('mode') : 'dark';  
+    const [currentMode, setCurrentMode] = useState(cur);
     const [isChecked, setIsChecked] = useState(false);
   
     useEffect(() => {
       const theme = currentMode === 'light' ? lightTheme : darkTheme;
+      localStorage.setItem('mode',currentMode);
       Object.keys(theme).forEach(key => {
         const value = theme[key];
         document.documentElement.style.setProperty(key, value);
@@ -58,16 +59,28 @@ const MenuRight = ({ style }) => {
     useEffect(() => {
       if (localStorage.getItem('mode') === 'dark') {
         setCurrentMode('dark');
+        setIsChecked(false);
+      }else {
+        setCurrentMode('light');
         setIsChecked(true);
       }
     }, []);
   
     const toggleTheme = () => {
-      console.log("toggle clicked");
-      const newMode = currentMode === 'light' ? 'dark' : 'light';
-      setIsChecked(!isChecked);
-      setCurrentMode(newMode);
-      localStorage.setItem('mode', newMode);
+      // const newMode = currentMode === 'light' ? 'dark' : 'light';
+      // setIsChecked(!isChecked);
+      // setCurrentMode(newMode);
+      // localStorage.setItem('mode', newMode);
+
+      if(currentMode == 'light') {
+        setCurrentMode('dark');
+        setIsChecked(false);
+        localStorage.setItem('mode','dark');
+      }else {
+        setCurrentMode('light');
+        setIsChecked(true);
+        localStorage.setItem('mode', 'light');
+      }
     };
 
     
@@ -97,7 +110,7 @@ const MenuRight = ({ style }) => {
                                     checked={isChecked}
                                     id="modeToggle"
                                 />
-                                <label for="modeToggle"></label>
+                                <label htmlFor="modeToggle"></label>
                             </Toggle>
                     </li>
                 </ul>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "@emotion/styled";
 import dark from './assets/dark.png';
-// import light from './assets/light.png';
+import light from './assets/light.png';
 import { Spring } from "react-spring/renderprops";
 import VisibilitySensor from "../layout/VisibilitySensor";
 import { useTheme } from "../../context/mainContext";
@@ -10,6 +10,8 @@ import { useTheme } from "../../context/mainContext";
 const Hero =() => {
 
   const mainState = useTheme();
+
+   const imgSrc = localStorage.getItem('mode') === 'light' ? light  : dark;
 
   return (
     <>
@@ -46,7 +48,7 @@ const Hero =() => {
                               great and worthy of our praise 
                               </p>
                               <figure>
-                                  <img src={dark} alt="footer" /> 
+                                  <img src={imgSrc} alt="footer" /> 
                               </figure>
                             </HeroFooter>
                         </HeroDiv>
