@@ -1,0 +1,57 @@
+:root {
+    --bg:#00101D;
+    --nav:#ffffff;
+    --p-white:#ffffff;
+    --feature-heading:#ffffff;
+    --feature-p:#cccccc;
+    --testimony-bg:#091E29;
+    --testimony-heading:#ffffff;
+    --testimony-p:#cccccc;
+    --testimoy-footer:#999999;
+    --footer-heading:#ffffff;
+    --footer-p:#cccccc;
+    --footer-list:#cccccc;
+    --footer-track:#ffffff;
+
+    --text-blue:#0071BC;
+    --carousel-btn:##29ABE2;
+    --text-family:'Maven Pro', sans-serif;
+}
+  
+html {
+    box-sizing: border-box;
+    color: #222222;
+}
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 0;
+    line-height: 1;
+    background-color:var(--bg);
+    color: #994cc3;
+    color: var(--color-text);
+    transition: background 0.8s, color 0.8s;
+  }
+  
+  /* button {
+    background-color:none;
+    outline:none;
+    border:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    
+    span {
+      display:inline-block.
+      background-color:blue;
+      width:35px;
+      height:20px;
+      margin-bottom:10px;
+    }
+} */
