@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Header from '../home/header';
 import Hero from '../home/hero';
 import Feature from '../home/feature';

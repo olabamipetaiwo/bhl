@@ -11,12 +11,12 @@ const Footer =() => {
 
         <div className="links">
             <div className="links__section">
-              <a href="#"> - Send us a message</a>
-              <a href="#"> - Give us a call</a>
-              <a href="#"> - Send us an Email</a>
+              <a href="a.com"> - Send us a message</a>
+              <a href="a.com"> - Give us a call</a>
+              <a href="a.com"> - Send us an Email</a>
             </div>
             <div className="links__section">
-              <a href="#"> - Track your package here</a>
+              <a href="a.com"> - Track your package here</a>
             </div>
         </div>
       </FooterMain>

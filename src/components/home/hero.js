@@ -1,17 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from "@emotion/styled";
-import dark from './assets/dark.png';
-import light from './assets/light.png';
 import { Spring } from "react-spring/renderprops";
 import VisibilitySensor from "../layout/VisibilitySensor";
-import { useTheme } from "../../context/mainContext";
 
+
+import ThemeContext from "../../context/themeContext/themeContext";
 
 const Hero =() => {
 
-  const mainState = useTheme();
-
-   const imgSrc = localStorage.getItem('mode') === 'light' ? light  : dark;
+  
+  const themeContext = useContext(ThemeContext);
+  const {heroImg} = themeContext;
 
   return (
     <>
@@ -48,7 +47,8 @@ const Hero =() => {
                               great and worthy of our praise 
                               </p>
                               <figure>
-                                  <img src={imgSrc} alt="footer" /> 
+                                  <img src={heroImg} alt="footer" /> 
+                                  {/* <h1> src={heroImg} </h1>  */}
                               </figure>
                             </HeroFooter>
                         </HeroDiv>

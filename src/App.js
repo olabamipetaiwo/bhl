@@ -5,6 +5,8 @@ import Home from './components/pages/homeComponent';
 import styled from "@emotion/styled";
 import './styles/root.css';
 
+import ThemeState from '../src/context/themeContext/themeState';
+
 
 const Main = styled.section`
    margin:0;
@@ -15,6 +17,7 @@ const Main = styled.section`
 const App = () => {
     
       return (
+            <ThemeState>
                 <Main>
                      <Router>
                             <Fragment>
@@ -25,6 +28,7 @@ const App = () => {
                           </Fragment>
                     </Router>
                 </Main>
+           </ThemeState>
     );
 }
 

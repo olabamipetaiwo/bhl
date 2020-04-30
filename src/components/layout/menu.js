@@ -1,6 +1,8 @@
-import React ,{Fragment,useEffect,useState}  from "react";
+import React ,{useEffect,useState,useContext}  from "react";
 import { animated } from "react-spring";
 import styled from "@emotion/styled";
+
+import ThemeContext from "../../context/themeContext/themeContext";
 
 
 const darkTheme = {
@@ -43,6 +45,10 @@ const lightTheme = {
   
 
 const MenuRight = ({ style }) => {
+
+    const themeContext = useContext(ThemeContext);
+    const {changeTheme} = themeContext;
+
     const cur = localStorage.mode ? localStorage.getItem('mode') : 'dark';  
     const [currentMode, setCurrentMode] = useState(cur);
     const [isChecked, setIsChecked] = useState(false);
@@ -67,12 +73,8 @@ const MenuRight = ({ style }) => {
     }, []);
   
     const toggleTheme = () => {
-      // const newMode = currentMode === 'light' ? 'dark' : 'light';
-      // setIsChecked(!isChecked);
-      // setCurrentMode(newMode);
-      // localStorage.setItem('mode', newMode);
-
-      if(currentMode == 'light') {
+      changeTheme();
+      if(currentMode === 'light') {
         setCurrentMode('dark');
         setIsChecked(false);
         localStorage.setItem('mode','dark');
@@ -90,16 +92,16 @@ const MenuRight = ({ style }) => {
           <nav>
                 <ul className="menu-list menu-list--right">
                     <li className="menu-list-item menu-list-item--right">
-                    <a href="/">Home</a>
+                    <a href="a.com">Home</a>
                     </li>
                     <li className="menu-list-item menu-list-item--right">
-                    <a href="/">About</a>
+                    <a href="a.com">About</a>
                     </li>
                     <li className="menu-list-item menu-list-item--right">
-                    <a href="/">Work</a>
+                    <a href="a.com">Work</a>
                     </li>
                     <li className="menu-list-item menu-list-item--right">
-                       <a href="/">Contact</a>
+                       <a href="a.com">Contact</a>
                     </li>
                     <li className="menu__toggle">
                             Switch Mode
